@@ -56,15 +56,12 @@ Enemy.prototype.render = function() {
 // This class requires an update(), render() and
 // a handleInput() method.
 
-var asmaa = function(x, y ){
+var asmaa = function(){
+    this.startedx = 390;
+    this.startedy = 380
+    this.x = this.startedx
+    this.y = this.startedy
   
-    //this.y = y
-   //this.x =x 
-    this.x = 390
-    this.y = 380
-  
- console.log(this.y);
-
     this.sprite = 'images/char-cat-girl.png'
    
 };
@@ -74,14 +71,17 @@ asmaa.prototype.render = function() {
 };
 // player update();
 asmaa.prototype.update =function(){
+
+   if (asmaa.x < this.x + 90 &&
+   asmaa.x + 90 > this.x &&
+   asmaa.y < this.y + 80 &&
+  80 + asmaa.y > this.y) {
+    // collision detected!
+    asmaa.x = this.startedx
+    asmaa.y = this.startedy
+}
     
-   if (this.y === allEnemies.y ){
-      this.x = 38
-     
-    if ( asmaa.x === allEnemies.x) {
-        asmaa.x = 390
-    }
-          }
+   
 }
 
 //player handleinput () method
