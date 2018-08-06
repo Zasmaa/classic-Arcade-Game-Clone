@@ -10,9 +10,7 @@ var Enemy = function(y, x , rate) {
     this.y = y
     this.x = x
     this.rate = rate
-    this.dis2 = 800
-    this.dis1 = this.dis2 - this.y  
-   
+    this.dis2 = 800 
 
 };
 // Update the enemy's position, required method for game
@@ -26,10 +24,7 @@ Enemy.prototype.update = function(dt) {
     if ( this.x > this.dis2) {
         this.x = 0
     }
-   //console.log(enemy);
            }   
-
-
 };
 // Draw the enemy on the screen, required method for game
 Enemy.prototype.render = function() {
@@ -72,6 +67,7 @@ if (this.y < 0 ) {
         this.y = 380
 
      },300)
+    Gameover();
 }   
 }
 //player handleinput () method
@@ -110,6 +106,18 @@ let enemy2 = new Enemy(150, 200, 350);
 let allEnemies = [];
 allEnemies.push(enemy, enemy1, enemy2); 
 player = new Asmaa();
+// add modal 
+var Gameover = function(){
+
+
+    // displaying modal
+popupModal.style.display = 'block';
+// Play again button
+let playAgain = document.querySelector('.modal-btn-playAgain');
+playAgain.addEventListener('click', function(e){
+  location.reload()
+});
+}
 
 
 // This listens for key presses and sends the keys to your
