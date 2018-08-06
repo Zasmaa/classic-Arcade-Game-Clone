@@ -6,6 +6,6 @@ In this project, many websites were a reference. The reference website is the bo
 For the modal of the game this website was used: https://www.w3schools.com/bootstrap/bootstrap_modal.asp
 # Installation 
 First clone the game from GitHub
-https://github.com/Zasmaa/classic-Arcade-Game-Clone
+https://github.com/Zasmaa/classic-Arcade-Game-Clone.
 Then open the index.html to load the game. 
 
