@@ -7,10 +7,10 @@ var Enemy = function(y, x , rate) {
     // The image/sprite for our enemies, this uses
     // a helper we've provided to easily load images
     this.sprite = 'images/enemy-bug.png';
-    this.y = y
-    this.x = x
-    this.rate = rate
-    this.dis2 = 800 
+    this.y = y;
+    this.x = x;
+    this.rate = rate;
+    this.dis2 = 800; 
 
 };
 // Update the enemy's position, required method for game
@@ -34,12 +34,11 @@ Enemy.prototype.render = function() {
 // Now write your own player class
 // This class requires an update(), render() and
 // a handleInput() method.
-
 var Asmaa = function(){
-    this.x = 390
-    this.y = 380
+    this.x = 390;
+    this.y = 380;
   
-    this.sprite = 'images/char-cat-girl.png'
+    this.sprite = 'images/char-cat-girl.png';
    
 };
 // draw the player on the screen
@@ -56,28 +55,28 @@ Asmaa.prototype.update =function(){
    this.y < enemy.y + 30 &&
   30 + this.y > enemy.y) {
     // collision detected!
-    this.x = 390
-    this.y = 380
-}
-    }
+    this.x = 390;
+    this.y = 380;
+       };
+       };
 // the palyer reach the water 
 if (this.y < 0 ) {
      setTimeout(()=>{
         this.x = 390
         this.y = 380
 
-     },300)
+ },300);
     Gameover();
 }   
-}
+};
 //player handleinput () method
 Asmaa.prototype.handleInput = function(keys){
 
 //
-let leftboundaries = this.x > 0
-let rightboundaries = this.x <390
-let downboundaries = this.y <380
-let upboundaries = this.y >0
+let leftboundaries = this.x > 0;
+let rightboundaries = this.x <390;
+let downboundaries = this.y <380;
+let upboundaries = this.y >0;
 if (keys == 'left' && leftboundaries ) {
     this.x -= 101 
 }
@@ -90,11 +89,7 @@ if (keys == 'down' && downboundaries) {
 
 if (keys == 'up' && upboundaries) {
     this.y -= 83
-}
-
-console.log(keys)
-
-
+};
 };
 
 // Now instantiate your objects.
@@ -108,8 +103,6 @@ allEnemies.push(enemy, enemy1, enemy2);
 player = new Asmaa();
 // add modal 
 var Gameover = function(){
-
-
     // displaying modal
 popupModal.style.display = 'block';
 // Play again button
